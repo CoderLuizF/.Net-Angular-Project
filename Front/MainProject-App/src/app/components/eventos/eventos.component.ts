@@ -9,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class EventosComponent implements OnInit {
   public eventos: any = [];
 
+  widthImg: number = 150;
+  marginImg: number = 2;
+
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
@@ -17,7 +20,7 @@ export class EventosComponent implements OnInit {
   public getEventos(): void {
     this.http.get('https://localhost:5001/api/eventos').subscribe(
       (response) => (this.eventos = response),
-      (error) => console.log(error),
+      (error) => console.log(error)
     );
   }
 }
